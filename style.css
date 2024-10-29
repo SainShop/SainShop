@@ -27,7 +27,7 @@ header {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    margin-left: 520px; /* Отступ между логотипом и меню */
+    margin-left: 120px; /* Отступ между логотипом и меню */
 }
 
 .menu-icon div {
