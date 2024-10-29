@@ -27,7 +27,8 @@ header {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    margin-left: 120px; /* Отступ между логотипом и меню */
+    margin-left: 0px; /* Отступ между логотипом и меню */
+    transform: translateX(120px); /* Сдвигаем иконку на 120px вправо */
 }
 
 .menu-icon div {
