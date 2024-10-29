@@ -133,3 +133,22 @@ footer a {
     margin-top: 5px;
     display: block;
 }
+
+/* Установка минимальной высоты для body и main */
+body, html {
+    min-height: 100vh; /* 100% высоты видимого экрана */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Заставляет main занимать все свободное пространство */
+}
+
+/* Стили для footer */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Отодвигает футер вниз */
+}
