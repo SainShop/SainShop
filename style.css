@@ -12,21 +12,21 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Центрируем логотип и меню */
     align-items: center;
     background-color: #000;
-    padding: 10px 20px;
-    position: relative;
+    padding: 20px 0; /* Увеличиваем высоту хедера */
 }
 
 .logo img {
-    height: 50px;
+    height: 80px; /* Увеличиваем размер логотипа */
 }
 
 .menu-icon {
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    margin-left: 20px; /* Отступ между логотипом и меню */
 }
 
 .menu-icon div {
@@ -72,26 +72,26 @@ main {
 .gallery {
     display: flex;
     flex-direction: column;
-    align-items: center; /* центрируем элементы по горизонтали */
-    gap: 20px;          /* промежуток между изображениями */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    gap: 20px;          /* Промежуток между изображениями */
 }
 
 .top-row {
-    display: flex; /* горизонтальное размещение первых двух изображений */
-    gap: 20px;     /* промежуток между изображениями в верхнем ряду */
+    display: flex; /* Горизонтальное размещение первых двух изображений */
+    gap: 20px;     /* Промежуток между изображениями в верхнем ряду */
 }
 
 .image-container {
-    width: 150px;  /* ширина для всех контейнеров изображений */
-    height: 200px; /* высота для всех контейнеров изображений */
-    background-color: #444; 
+    width: 150px;  /* Ширина для всех контейнеров изображений */
+    height: 200px; /* Высота для всех контейнеров изображений */
+    background-color: transparent; /* Убираем черный фон */
     border: 2px solid #555;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .center-image {
-    margin-top: 20px; /*отступ сверху для центрального изображения */
+    margin-top: 20px; /* Добавляем отступ сверху для центрального изображения */
 }
 
 aside {
@@ -112,7 +112,7 @@ aside {
 }
 
 .icon img {
-    width: 100%; /* ширина в контейнере */
+    width: 100%; /* Изображение заполняет контейнер */
     height: auto;
 }
 
