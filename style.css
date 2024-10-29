@@ -20,6 +20,7 @@ header {
 
 .logo img {
     height: 80px; /* Увеличиваем размер логотипа */
+    pointer-events: none; /* Отключает клики по изображению */
 }
 
 .menu-icon {
