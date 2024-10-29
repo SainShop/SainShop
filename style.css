@@ -28,8 +28,10 @@ header {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    margin-left: 0px; /* Отступ между логотипом и меню */
-    transform: translateX(120px); /* Сдвигаем иконку на 120px вправо */
+    position: absolute;
+    right: 20px; /* Ставим иконку меню справа с нужным отступом */
+    top: 50%; /* Позиционируем меню по вертикали в середине */
+    transform: translateY(-50%); /* Центрируем иконку меню по вертикали */
 }
 
 .menu-icon div {
