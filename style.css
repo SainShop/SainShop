@@ -88,10 +88,12 @@ main {
     border: 2px solid #555;
     border-radius: 10px;
     overflow: hidden;
+    pointer-events: none; /* Отключает клики по изображению */
 }
 
 .center-image {
     margin-top: 20px; /* Добавляем отступ сверху для центрального изображения */
+    pointer-events: none; /* Отключает клики по изображению */
 }
 
 aside {
@@ -109,6 +111,7 @@ aside {
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none; /* Отключает клики по изображению */
 }
 
 .icon img {
