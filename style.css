@@ -156,3 +156,7 @@ footer {
     padding: 10px;
     margin-top: auto; /* Отодвигает футер вниз */
 }
+
+.logo {
+    pointer-events: none; /* Отключает клики по логотипу и его контейнеру */
+}
