@@ -87,7 +87,7 @@ main {
 }
 
 .image-container {
-    width: 200px;  /* Ширина для всех контейнеров изображений */
+    width: 150px;  /* Ширина для всех контейнеров изображений */
     height: 200px; /* Высота для всех контейнеров изображений */
     background-color: transparent; /* Убираем черный фон */
     border: 2px solid #555;
