@@ -161,6 +161,13 @@ footer {
     margin-top: auto; /* Отодвигает футер вниз */
 }
 
+a {
+    user-select: none; /* Запрещает выделение текста */
+    -webkit-user-drag: none; /* Отключает перетаскивание в WebKit браузерах */
+}
+
+
+
 .logo {
     pointer-events: none; /* Отключает клики по логотипу и его контейнеру */
 }
