@@ -155,10 +155,40 @@ main {
 
 /* Стили для footer */
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: #000;
-    text-align: center;
-    padding: 10px;
-    margin-top: auto; /* Отодвигает футер вниз */
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+}
+
+.footer-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #888; /* Серый цвет текста для неактивных кнопок */
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer-button img {
+    width: 24px;
+    height: 24px;
+    filter: grayscale(100%); /* Делает иконку серой */
+    transition: filter 0.3s, color 0.3s;
+}
+
+.footer-button.active img,
+.footer-button:hover img {
+    filter: none; /* Белая иконка для активной или при наведении */
+}
+
+.footer-button.active,
+.footer-button:hover {
+    color: #fff; /* Белый цвет текста для активной кнопки */
 }
 
 a {
