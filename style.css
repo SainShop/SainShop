@@ -15,7 +15,7 @@ header {
     justify-content: center; /* Центрируем логотип и меню */
     align-items: center;
     background-color: #000;
-    padding: 20px 0; /* Увеличиваем высоту хедера */
+    padding: 10px 0; /* Увеличиваем высоту хедера */
     position: relative; /* Устанавливает относительное позиционирование для header */
 }
 
