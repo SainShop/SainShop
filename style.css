@@ -205,6 +205,7 @@ footer img {
     -webkit-touch-callout: none; /* Отключаем контекстное меню на устройствах Apple */
     -webkit-user-select: none; /* Отключаем возможность выбора картинки */
     user-select: none; /* Отключаем возможность выбора картинки в других браузерах */
+    pointer-events: none; /* Отключает клики по изображению */
 }
 
 
