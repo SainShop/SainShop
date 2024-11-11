@@ -212,3 +212,30 @@ footer img {
 .logo {
     pointer-events: none; /* Отключает клики по логотипу и его контейнеру */
 }
+
+.marquee {
+    width: 100%;
+    background-color: #FFD700; /* Жёлтый фон */
+    color: #000; /* Чёрный текст */
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.marquee span {
+    display: inline-block;
+    animation: marquee 5s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
