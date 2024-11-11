@@ -223,14 +223,20 @@ footer img {
     padding: 10px 0;
     font-size: 18px;
     font-weight: bold;
-    text-align: center;
     position: relative;
 }
 
 .marquee span {
     display: inline-block;
-    padding-left: 100%; /* Начало за пределами контейнера */
-    animation: marquee 10s linear infinite; /* Увеличил длительность анимации */
-}
+    white-space: nowrap;
+    animation: marquee 10s linear infinite; /* Длительность анимации */
 }
 
+@keyframes marquee {
+    0% {
+        transform: translateX(100%); /* Начало за пределами контейнера */
+    }
+    100% {
+        transform: translateX(-100%); /* Конец за пределами контейнера */
+    }
+}
