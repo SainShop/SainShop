@@ -13,7 +13,6 @@ body {
 header {
     background-color: #000; /* Чёрный фон для хедера */
     color: #fff;
-    padding: 10px 0;
     position: relative;
     overflow: hidden; /* Обрезаем всё, что выходит за пределы */
     padding-bottom: 30px;
