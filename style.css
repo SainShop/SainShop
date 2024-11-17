@@ -220,23 +220,23 @@ footer img {
     color: #000; /* Чёрный текст */
     overflow: hidden;
     white-space: nowrap;
-    padding: 10px 0;
     font-size: 18px;
     font-weight: bold;
+    padding: 5px 0;
     position: relative;
 }
 
 .marquee span {
     display: inline-block;
+    animation: marquee 10s linear infinite; /* Скорость анимации */
     white-space: nowrap;
-    animation: marquee 10s linear infinite; /* Длительность анимации */
 }
 
 @keyframes marquee {
     0% {
-        transform: translateX(100%); /* Начало за пределами контейнера */
+        transform: translateX(100%);
     }
     100% {
-        transform: translateX(-100%); /* Конец за пределами контейнера */
+        transform: translateX(-100%);
     }
 }
