@@ -12,13 +12,15 @@ body {
 
 header {
     background-color: #000; /* Чёрный фон для хедера */
-    padding: 10px 0;
     color: #fff;
-    text-align: center; /* Центровка всех элементов внутри */
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden; /* Обрезаем всё, что выходит за пределы */
 }
 
 header .logo {
-    margin-bottom: 10px; /* Отступ между логотипом и строкой */
+    text-align: center;
+    margin-bottom: 0; /* Убираем отступы под логотипом */
 }
 
 header .logo img {
@@ -26,29 +28,36 @@ header .logo img {
 }
 
 header .marquee {
-    width: 100%; /* Растянуть строку по ширине хедера */
+    width: 100%;
     background-color: #FFD700; /* Жёлтый фон */
     color: #000; /* Чёрный текст */
     overflow: hidden;
     white-space: nowrap;
     font-size: 18px;
     font-weight: bold;
-    padding: 5px 0;
-    position: relative;
+    position: absolute;
+    bottom: 0; /* Убедимся, что строка "приклеена" к низу хедера */
+    left: 0;
+    height: 30px; /* Высота строки */
+    line-height: 30px; /* Центровка текста по вертикали */
 }
 
 header .marquee span {
     display: inline-block;
-    animation: marquee 10s linear infinite; /* Скорость анимации */
+    animation: marquee 10s linear infinite; /* Анимация движения */
     white-space: nowrap;
 }
 
+header .marquee span::after {
+    content: " АКЦИЯ АКЦИЯ АКЦИЯ АКЦИЯ"; /* Добавляем повторение текста */
+}
+
 @keyframes marquee {
-    0% {
-        transform: translateX(100%);
+    from {
+        transform: translateX(0); /* Начало с края контейнера */
     }
-    100% {
-        transform: translateX(-100%);
+    to {
+        transform: translateX(-100%); /* Конец за пределами контейнера */
     }
 }
 
