@@ -13,18 +13,43 @@ body {
 header {
     background-color: #000; /* Чёрный фон для хедера */
     padding: 10px 0;
-    position: relative;
-    overflow: hidden; /* Убедимся, что всё внутри хедера аккуратно обрезано */
     color: #fff;
+    text-align: center; /* Центровка всех элементов внутри */
 }
 
 header .logo {
-    text-align: center;
     margin-bottom: 10px; /* Отступ между логотипом и строкой */
 }
 
 header .logo img {
     max-width: 120px; /* Размер логотипа */
+}
+
+header .marquee {
+    width: 100%; /* Растянуть строку по ширине хедера */
+    background-color: #FFD700; /* Жёлтый фон */
+    color: #000; /* Чёрный текст */
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 0;
+    position: relative;
+}
+
+header .marquee span {
+    display: inline-block;
+    animation: marquee 10s linear infinite; /* Скорость анимации */
+    white-space: nowrap;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 main {
@@ -171,31 +196,4 @@ footer img {
 
 .logo {
     pointer-events: none; /* Отключает клики по логотипу и его контейнеру */
-}
-
-.marquee {
-    width: 100%;
-    background-color: #FFD700; /* Жёлтый фон */
-    color: #000; /* Чёрный текст */
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 5px 0;
-    position: relative;
-}
-
-.marquee span {
-    display: inline-block;
-    animation: marquee 10s linear infinite; /* Скорость анимации */
-    white-space: nowrap;
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
 }
