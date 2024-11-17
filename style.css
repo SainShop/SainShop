@@ -48,10 +48,6 @@ header .marquee span {
     white-space: nowrap;
 }
 
-header .marquee span::after {
-    content: " АКЦИЯ АКЦИЯ АКЦИЯ АКЦИЯ"; /* Добавляем повторение текста */
-}
-
 @keyframes marquee {
     from {
         transform: translateX(0); /* Начало с края контейнера */
