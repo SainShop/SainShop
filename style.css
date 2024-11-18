@@ -46,6 +46,7 @@ header .marquee span {
     display: inline-block;
     animation: marquee 10s linear infinite; /* Анимация движения */
     white-space: nowrap;
+    padding-left: 100%; /* Заполняем пробел перед текстом */
 }
 
 @keyframes marquee {
