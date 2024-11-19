@@ -83,7 +83,6 @@ main {
     border: 2px solid #555;
     border-radius: 10px;
     overflow: hidden;
-    pointer-events: none; /* Отключает клики по изображению */
 }
 
 .center-image {
