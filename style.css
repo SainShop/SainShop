@@ -209,7 +209,7 @@ body.page-1 .gallery {
     display: grid; /* Используем grid */
     gap: 20px; /* Расстояние между элементами */
     grid-template-columns: repeat(2, 1fr); /* 2 колонки в ряд */
-    margin-bottom: 50px; /* Добавляет пустое пространство под галереей */
+    margin-bottom: 200px; /* Добавляет пустое пространство под галереей */
 
 }
 
