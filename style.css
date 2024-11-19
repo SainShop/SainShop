@@ -228,3 +228,107 @@ body.page-1 .gallery {
 .spacer {
     height: 50px; /* Высота пустого пространства */
 }
+
+        /* Стили для изображения */
+        .clickable-image {
+            width: 200px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        /* Стиль для фона модального окна */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Стиль для содержимого модального окна */
+        .modal-content {
+            width: 229px;
+            height: 435px;
+            background-color: #000;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Кнопка закрытия */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 36px;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Картинка сверху модального окна */
+        .modal-image {
+            width: 100%;
+            height: 60%; /* Занимает треть высоты окна */
+            border-radius: 10px;
+            background: url('https://i.imgur.com/mQOb6Dx.jpeg') center/cover no-repeat;
+            margin-bottom: 10px;
+        }
+
+        /* Стили для чекбоксов */
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            width: 100%; /* Добавлено, чтобы элементы были на одной линии */
+        }
+
+        .custom-checkbox input[type="checkbox"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #37B6E9;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .custom-checkbox input[type="checkbox"]:checked {
+            background-color: #37B6E9;
+            border-color: #37B6E9;
+        }
+
+        .custom-checkbox label {
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        /* Стиль для кнопки */
+        .modal-button {
+            margin-top: auto;
+            background-color: #37B6E9;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modal-button:hover {
+            background-color: #1f91c4;
+        }
