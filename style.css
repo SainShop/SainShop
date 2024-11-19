@@ -69,6 +69,7 @@ main {
     flex-direction: column;
     align-items: center; /* Центрируем элементы по горизонтали */
     gap: 20px;          /* Промежуток между изображениями */
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .top-row {
