@@ -210,3 +210,7 @@ body.page-1 .gallery {
     gap: 20px; /* Расстояние между элементами */
     grid-template-columns: repeat(2, 1fr); /* 2 колонки в ряд */
 }
+
+.spacer {
+    height: 50px; /* Высота пустого пространства */
+}
