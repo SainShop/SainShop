@@ -34,6 +34,38 @@
             <img src="odno8.png" alt="Image 1" class="open-modal" data-modal="modal-content-8">
         </section>
         <div class="spacer"></div>
+
+            <!-- Модальное окно -->
+    <div class="modal" id="dialogModal">
+        <div class="modal-content">
+            <!-- Кнопка закрытия -->
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+
+            <!-- Изображение сверху -->
+            <div class="modal-image"></div>
+
+            <!-- Чекбоксы с вариантами -->
+            <div class="custom-checkbox">
+                <input type="checkbox" id="vanilla">
+                <label for="vanilla">Ваниль</label>
+            </div>
+            <div class="custom-checkbox">
+                <input type="checkbox" id="chocolate">
+                <label for="chocolate">Шоколад</label>
+            </div>
+            <div class="custom-checkbox">
+                <input type="checkbox" id="apple">
+                <label for="apple">Яблоко</label>
+            </div>
+
+            <!-- Кнопка добавления в корзину -->
+            <button class="modal-button" onclick="addToCart()">Добавить в корзину</button>
+        </div>
+    </div>
+    
+
+
+            
     </main>
 
 <footer>
