@@ -272,7 +272,7 @@ body.page-1 .gallery {
             top: 15px;
             right: 15px;
             font-size: 36px;
-            color: #fff;
+            color: #000000;
             cursor: pointer;
             background: none;
             border: none;
@@ -341,7 +341,7 @@ body.page-1 .gallery {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: #000000;
     border: 1px solid #ddd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
