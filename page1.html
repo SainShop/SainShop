@@ -176,9 +176,9 @@ function addToCart() {
     });
 
     if (selectedOptions.length > 0) {
-        showCustomAlert("Спасибо за покупку! Вы добавили: " + selectedOptions.join(", ") + " в корзину.");
+        showCustomAlert("Вы добавили: " + selectedOptions.join(", ") + " в корзину.");
     } else {
-        showCustomAlert("Спасибо за покупку!");
+        showCustomAlert("Вы ничего не добавили");
     }
 }
 
