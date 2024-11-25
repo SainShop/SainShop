@@ -283,8 +283,8 @@ body.page-1 .gallery {
             width: 100%;
             height: 100%; /* Занимает треть высоты окна */
             border-radius: 10px;
-            width: auto; /* Устанавливает исходную ширину */
-            height: auto; /* Устанавливает исходную высоту */
+            width: 150; /* Устанавливает исходную ширину */
+            height: 200; /* Устанавливает исходную высоту */
             background: url('https://i.imgur.com/mQOb6Dx.jpeg') center/cover no-repeat;
             margin-bottom: 10px;
         }
