@@ -84,11 +84,14 @@ main {
     border: 2px solid #555;
     border-radius: 10px;
     overflow: hidden;
+    -webkit-user-drag: none; /* Отключаем перетаскивание картинки */
+    user-drag: none; /* Для других браузеров */
 }
 
 .center-image {
     margin-top: 20px; /* Добавляем отступ сверху для центрального изображения */
-    pointer-events: none; /* Отключает клики по изображению */
+    -webkit-user-drag: none; /* Отключаем перетаскивание картинки */
+    user-drag: none; /* Для других браузеров */
 }
 
 aside {
