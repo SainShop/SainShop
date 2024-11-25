@@ -272,7 +272,7 @@ body.page-1 .gallery {
             top: 15px;
             right: 15px;
             font-size: 36px;
-            color: #fff;
+            color: #96009e;
             cursor: pointer;
             background: none;
             border: none;
@@ -323,7 +323,7 @@ body.page-1 .gallery {
         .modal-button {
             margin-top: auto;
             background-color: #37B6E9;
-            color: #96009e;
+            color: #fff;
             font-family: Arial, sans-serif;
             font-size: 16px;
             border: none;
