@@ -49,6 +49,8 @@
             <div class="modal-content">
                 <button class="close-btn" onclick="closeModal()">&times;</button>
                 <div class="modal-image" id="modalImage"></div>
+                <div class="modal-description">
+                    <p id="modalTitle">Описание товара</p>
                 <div class="modal-options" id="modalOptions"></div>
                 <button class="modal-button" onclick="addToCart(); closeModal();">Добавить в корзину</button>
             </div>
@@ -101,34 +103,42 @@ function closeCustomAlert() {
         const modalData = {
             "modal-content-1": {
                 image: "odno1.png",
+                title: "Описание товара 1",
                 options: ["Ваниль", "Шоколад", "Яблоко"]
             },
             "modal-content-2": {
                 image: "odno2.png",
+                title: "Описание товара 1",
                 options: ["Клубника", "Малина", "Черника"]
             },
             "modal-content-3": {
                 image: "odno3.png",
+                title: "Описание товара 45",
                 options: ["Банан", "Апельсин", "Киви"]
             },
             "modal-content-4": {
                 image: "odno4.png",
+                title: "Описание товара 1",
                 options: ["Груша", "Арбуз", "Дыня"]
             },
             "modal-content-5": {
                 image: "odno5.png",
+                title: "Описание товара 1",
                 options: ["Персик", "Вишня", "Слива"]
             },
             "modal-content-6": {
                 image: "odno6.png",
+                title: "Описание товара 1",
                 options: ["Ананас", "Манго", "Кокос"]
             },
             "modal-content-7": {
                 image: "odno7.png",
+                title: "Описание товара 1",
                 options: ["Гранат", "Лайм", "Лимон"]
             },
             "modal-content-8": {
                 image: "odno8.png",
+                title: "Описание товара 34562",
                 options: ["Яблоко", "Грейпфрут", "Финики", "Абрикос", "Клубника", "Вода", "Грибы", "Киви"]
             }
         };
@@ -139,6 +149,7 @@ function closeCustomAlert() {
             if (modal) {
                 document.getElementById("dialogModal").style.display = "flex";
                 document.getElementById("modalImage").style.backgroundImage = `url(${modal.image})`;
+                document.getElementById("modalTitle").textContent = modal.title;
 
                 // Генерация чекбоксов
                 const optionsContainer = document.getElementById("modalOptions");
