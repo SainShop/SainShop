@@ -285,8 +285,8 @@ body.page-1 .gallery {
         /* Картинка сверху модального окна */
         .modal-image {
             border-radius: 10px;
-            width: 150; /* Устанавливает исходную ширину */
-            height: 200; /* Устанавливает исходную высоту */
+            width: 150px; /* Устанавливает исходную ширину */
+            height: 200px; /* Устанавливает исходную высоту */
             background: url('https://i.imgur.com/mQOb6Dx.jpeg') center/cover no-repeat;
             background-size: contain;
             background-position: center;
