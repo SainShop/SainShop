@@ -287,6 +287,7 @@ body.page-1 .gallery {
             border-radius: 10px;
             width: 150; /* Устанавливает исходную ширину */
             height: 200; /* Устанавливает исходную высоту */
+            background: url('https://i.imgur.com/mQOb6Dx.jpeg') center/cover no-repeat;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
