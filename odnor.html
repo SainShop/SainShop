@@ -207,6 +207,9 @@ function addToCart() {
     });
 
     if (selectedOptions.length > 0) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(...selectedOptions);
+        localStorage.setItem('cart', JSON.stringify(cart));
         showCustomAlert("Вы добавили: " + selectedOptions.join(", ") + " в корзину.");
     } else {
         showCustomAlert("Вы ничего не добавили");
