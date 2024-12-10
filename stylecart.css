@@ -1,8 +1,10 @@
         .cart-container {
-            max-width: 800px;
+            width: 300px;  /* Ширина для всех контейнеров изображений */
+            height: 540px; /* Высота для всех контейнеров изображений */
             margin: 20px auto;
             padding: 20px;
             border: 1px solid #ddd;
+            color: #030303; /* Цвет текста товаров */
             border-radius: 10px;
             background-color: #f9f9f9;
         }
@@ -12,6 +14,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px;
+            color: #030303; /* Цвет текста товаров */
             border-bottom: 1px solid #ddd;
         }
 
