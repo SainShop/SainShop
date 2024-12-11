@@ -40,9 +40,14 @@ function getCartItems() {
 
 // Завершение заказа
 function completeOrder() {
-    const orderNumber = Math.floor(10000 + Math.random() * 90000); // 5 случайных цифр
-    const telegramUsername = getTelegramUsername(); // Получаем имя пользователя
-    const cartItems = getCartItems(); // Весь заказ
+    const orderNumber = Math.floor(10000 + Math.random() * 90000); // Случайный номер заказа
+    const telegramUsername = getTelegramUsername(); // Получаем имя пользователя из Telegram
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || []; // Загружаем текущий заказ
+
+    if (cartItems.length === 0) {
+        showCustomAlert("Ваша корзина пуста. Добавьте товары перед оформлением заказа.");
+        return;
+    }
 
     const data = {
         username: telegramUsername,
@@ -50,7 +55,7 @@ function completeOrder() {
         orderNumber: orderNumber
     };
 
-    // Отправка данных в Google Таблицы
+    // Отправляем данные в Google Таблицы
     fetch("https://script.google.com/macros/s/AKfycbz6KgMNLvApLxMlakNMcNM316udIlvCQImxuYTbhS25ygVfCw09WSS26ssnTJJvrGXi/exec", {
         method: "POST",
         body: JSON.stringify(data),
@@ -61,6 +66,8 @@ function completeOrder() {
         .then(response => {
             if (response.ok) {
                 showCustomAlert(`Ваш номер заказа ${orderNumber}. Наш менеджер свяжется с вами для уточнения деталей.`);
+                localStorage.removeItem("cart"); // Очищаем корзину после успешного заказа
+                updateCartUI(); // Обновляем UI корзины
             } else {
                 showCustomAlert("Ошибка отправки данных. Попробуйте снова.");
             }
@@ -71,6 +78,7 @@ function completeOrder() {
         });
 }
 
+
 function getTelegramUsername() {
     if (window.Telegram && Telegram.WebApp.initDataUnsafe) {
         return Telegram.WebApp.initDataUnsafe.user?.username || "Неизвестный пользователь";
@@ -78,17 +86,26 @@ function getTelegramUsername() {
     return "Неизвестный пользователь";
 }
 
+
 // Функция для обновления интерфейса корзины
 function updateCartUI() {
-    const cartContainer = document.getElementById('cartItems');
-    cartContainer.innerHTML = ""; // Очистка содержимого
+    const cartContainer = document.getElementById("cartItems");
+    cartContainer.innerHTML = ""; // Очистить содержимое корзины
 
+    // Получаем содержимое корзины из localStorage
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.forEach((item, index) => {
+
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Ваша корзина пуста.</p>";
+        return;
+    }
+
+    // Отображаем каждую добавленную опцию
+    cart.forEach((option, index) => {
         const cartItem = document.createElement("div");
         cartItem.className = "cart-item";
         cartItem.innerHTML = `
-            <span class="cart-item-options">${item.options.join(", ")}</span>
+            <span class="cart-item-options">${option}</span>
             <button class="remove-btn" onclick="removeFromCart(${index})">Удалить</button>
         `;
         cartContainer.appendChild(cartItem);
@@ -97,10 +114,11 @@ function updateCartUI() {
 
 function removeFromCart(index) {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1); // Удаляем элемент по индексу
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartUI();
+    cart.splice(index, 1); // Удаляем выбранный элемент
+    localStorage.setItem("cart", JSON.stringify(cart)); // Сохраняем обновленную корзину
+    updateCartUI(); // Обновляем UI корзины
 }
+
 
 // Инициализация корзины
 updateCartUI();
