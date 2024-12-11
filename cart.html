@@ -76,11 +76,11 @@ function completeOrder() {
 function getCartItems() {
     const items = [];
     const cartItems = document.querySelectorAll(".cart-item");
-cartItems.forEach(item => {
-    const itemNameElement = item.querySelector('span');
-    const itemName = itemNameElement ? itemNameElement.innerText : "Неизвестный товар";
-    items.push(itemName);
-});
+    cartItems.forEach(item => {
+        const itemNameElement = item.querySelector('span');
+        const itemName = itemNameElement ? itemNameElement.innerText : "Неизвестный товар";
+        items.push(itemName);
+    });
 
     });
     return items;
