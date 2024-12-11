@@ -92,7 +92,8 @@ function getCartItems() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         const cartItemsContainer = document.getElementById('cartItems');
-        const checkoutButton = document.getElementById('checkoutButton');
+        const checkoutButton = document.querySelector('.complete-order');
+
 
         // Обновление отображения корзины
         function updateCartUI() {
