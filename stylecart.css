@@ -35,7 +35,7 @@
             background-color: #e60000;
         }
 
-        .checkout-btn {
+        .complete-order {
             background-color: #4CAF50;
             color: white;
             border: none;
@@ -46,7 +46,7 @@
             margin: 20px auto;
         }
 
-        .checkout-btn:hover {
+        .complete-order:hover {
             background-color: #45a049;
         }
 
