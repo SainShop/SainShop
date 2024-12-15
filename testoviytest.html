@@ -1,29 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Telegram Mini App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram WebApp Test</title>
     <script>
-        window.onload = function () {
-            const tg = window.Telegram.WebApp;
+        function initTelegramApp() {
+            if (window.Telegram && window.Telegram.WebApp) {
+                const tg = window.Telegram.WebApp;
 
-            // Telegram WebApp init
-            tg.ready();
+                console.log("Telegram WebApp инициализирован!");
 
-            // Получение initData
-            const initData = tg.initData;
-            const initDataUnsafe = tg.initDataUnsafe;
+                tg.ready();
 
-            // Логируем переданные данные
-            console.log("initData (raw):", initData);
-            console.log("initDataUnsafe:", initDataUnsafe);
+                const initData = tg.initData;
+                const initDataUnsafe = tg.initDataUnsafe;
 
-            // Выводим username
-            const username = initDataUnsafe?.user?.username || "Анонимный пользователь";
-            document.body.innerHTML = `<h1>Привет, ${username}!</h1>`;
-        };
+                console.log("initData:", initData);
+                console.log("initDataUnsafe:", initDataUnsafe);
+
+                const username = initDataUnsafe?.user?.username || "Неизвестный пользователь";
+                document.body.innerHTML = `<h1>Привет, ${username}</h1>`;
+            } else {
+                document.body.innerText = "Ошибка: Telegram WebApp не найден!";
+                console.error("Telegram WebApp не подключен.");
+            }
+        }
+
+        window.onload = initTelegramApp;
     </script>
 </head>
 <body>
-    <h1>Загрузка...</h1>
+    <p>Инициализация Telegram...</p>
 </body>
 </html>
