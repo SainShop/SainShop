@@ -41,7 +41,8 @@ function getCartItems() {
 // Завершение заказа
 function sendOrderToTelegram() {
     // Получаем имя пользователя из Telegram Mini App
-    const username = "TestUser"
+    Telegram.WebApp.ready(); // Подготавливаем WebApp
+    const user = Telegram.WebApp.initDataUnsafe?.user || null;
 
     // Получаем данные корзины из localStorage
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -55,7 +56,7 @@ function sendOrderToTelegram() {
 
     // Формируем текст сообщения для Telegram
     const messageText = `🛒 *Новый заказ:*\n` +
-        `👤 *Пользователь*: ${username}\n` +
+        `👤 *Пользователь*: ${user}\n` +
         `📦 *Заказ*: ${cart.join(", ")}\n` +
         `🔢 *Номер заказа*: ${orderNumber}`;
 
