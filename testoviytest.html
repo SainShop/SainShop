@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Mini App Test</title>
+    <title>Telegram Mini App</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,26 +13,52 @@
         .info {
             font-weight: bold;
             color: #2c3e50;
-            margin-top: 20px;
-            word-wrap: break-word;
         }
-        .url {
+        .username {
             color: #3498db;
         }
     </style>
 </head>
 <body>
 
-    <h2>Mini App Test</h2>
-    <div class="info">Полная ссылка:</div>
-    <div id="full-url" class="info url">Loading...</div>
+    <h2>Extract Telegram Username</h2>
+    <div class="info">Имя пользователя:</div>
+    <div id="username" class="username">Loading...</div>
 
     <script>
-        // Получаем полный URL
-        const fullUrl = window.location.href;
+        // Извлекаем данные из хэша (например, #tgWebAppData=...)
+        const hash = window.location.hash;
 
-        // Отображаем полный URL на странице
-        document.getElementById('full-url').innerText = fullUrl;
+        if (hash) {
+            // Найти tgWebAppData в хэше
+            const match = hash.match(/tgWebAppData=([^&]*)/);
+            if (match) {
+                // Расшифровываем данные tgWebAppData
+                const decodedData = decodeURIComponent(match[1]);
+
+                // Извлекаем значение параметра "user"
+                const userMatch = decodedData.match(/user=([^&]*)/);
+                if (userMatch) {
+                    const userDataEncoded = decodeURIComponent(userMatch[1]);
+                    const userData = JSON.parse(decodeURIComponent(userDataEncoded));
+
+                    // Сохраняем username
+                    const username = userData.username;
+
+                    // Выводим на экран
+                    document.getElementById('username').innerText = username || "Имя не найдено";
+
+                    // Сохраняем username в переменную
+                    console.log("Username:", username);
+                } else {
+                    document.getElementById('username').innerText = "Данные пользователя не найдены.";
+                }
+            } else {
+                document.getElementById('username').innerText = "tgWebAppData не найдено.";
+            }
+        } else {
+            document.getElementById('username').innerText = "Хэш пуст.";
+        }
     </script>
 
 </body>
