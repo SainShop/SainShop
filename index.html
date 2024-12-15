@@ -62,6 +62,37 @@
         function toggleMenu() {
             document.getElementById("menu").classList.toggle("active");
         }
+
+        // Извлекаем данные из хэша (например, #tgWebAppData=...)
+const hash = window.location.hash;
+
+if (hash) {
+    const match = hash.match(/tgWebAppData=([^&]*)/);
+
+    if (match) {
+        const decodedData = decodeURIComponent(match[1]);
+
+        try {
+            const userMatch = decodedData.match(/user=([^&]*)/);
+            if (userMatch) {
+                const userDataEncoded = decodeURIComponent(userMatch[1]);
+                const userData = JSON.parse(decodeURIComponent(userDataEncoded));
+
+                // Сохраняем имя пользователя в localStorage
+                const username = userData.username;
+                localStorage.setItem('username', username);
+
+                console.log("Username сохранён в localStorage:", username);
+            }
+        } catch (err) {
+            console.error("Ошибка парсинга имени пользователя:", err);
+        }
+    }
+}
+
+
+
+        
     </script>
 </body>
 </html>
