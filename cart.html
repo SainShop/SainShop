@@ -27,27 +27,10 @@
     <script>
         
 
-        // Извлекаем данные из хэша (например, #tgWebAppData=...)
-        const hash = window.location.hash;
+// Получаем имя пользователя из localStorage
+const username = localStorage.getItem('username') || "Неизвестный пользователь";
 
-        if (hash) {
-            // Найти tgWebAppData в хэше
-            const match = hash.match(/tgWebAppData=([^&]*)/);
-            if (match) {
-                // Расшифровываем данные tgWebAppData
-                const decodedData = decodeURIComponent(match[1]);
-
-                // Извлекаем значение параметра "user"
-                const userMatch = decodedData.match(/user=([^&]*)/);
-                if (userMatch) {
-                    const userDataEncoded = decodeURIComponent(userMatch[1]);
-                    const userData = JSON.parse(decodeURIComponent(userDataEncoded));
-
-                    // Сохраняем username
-                    const username = userData.username;
-                }
-            }
-        }
+console.log("Username:", username);
 
         // Получаем содержимое корзины
         function getCartItems() {
