@@ -41,7 +41,7 @@ function getCartItems() {
 // Завершение заказа
 function sendOrderToTelegram() {
     // Получаем имя пользователя из Telegram Mini App
-    const username = window.Telegram.WebApp.initDataUnsafe?.user?.username || "Неизвестный пользователь";
+    const username = "TestUser"
 
     // Получаем данные корзины из localStorage
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
