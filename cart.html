@@ -54,7 +54,7 @@ function sendOrderToTelegram() {
 
     // Формируем текст сообщения для Telegram
     const messageText = `🛒 *Новый заказ:*\n` +
-        `👤 *Пользователь*: ${user}\n` +
+        `👤 *Пользователь*: ${username}\n` +
         `📦 *Заказ*: ${cart.join(", ")}\n` +
         `🔢 *Номер заказа*: ${orderNumber}`;
 
