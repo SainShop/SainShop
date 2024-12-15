@@ -87,14 +87,28 @@ function sendOrderToTelegram() {
     });
 }
 
+        // Извлекаем данные из хэша (например, #tgWebAppData=...)
+        const hash = window.location.hash;
 
+        if (hash) {
+            // Найти tgWebAppData в хэше
+            const match = hash.match(/tgWebAppData=([^&]*)/);
+            if (match) {
+                // Расшифровываем данные tgWebAppData
+                const decodedData = decodeURIComponent(match[1]);
 
-function getTelegramUsername() {
-    if (window.Telegram && Telegram.WebApp.initDataUnsafe) {
-        return Telegram.WebApp.initDataUnsafe.user?.username || "Неизвестный пользователь";
-    }
-    return "Неизвестный пользователь";
-}
+                // Извлекаем значение параметра "user"
+                const userMatch = decodedData.match(/user=([^&]*)/);
+                if (userMatch) {
+                    const userDataEncoded = decodeURIComponent(userMatch[1]);
+                    const userData = JSON.parse(decodeURIComponent(userDataEncoded));
+
+                    // Сохраняем username
+                    const username = userData.username;
+
+                    // Сохраняем username в переменную
+                    console.log("Username:", username);
+
 
 function showCustomAlert(message) {
     const alertBox = document.createElement("div");
