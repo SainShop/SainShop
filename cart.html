@@ -40,16 +40,24 @@ function getCartItems() {
 
 // Завершение заказа
 function sendOrderToTelegram() {
-    const orderData = {
-        username: "TestUser", // Имя пользователя (заменить на реальное)
-        order: ["2 ml", "3 ml"], // Опции из корзины
-        orderNumber: Math.floor(Math.random() * 100000) // Случайный номер заказа
-    };
+    // Получаем имя пользователя из Telegram Mini App
+    const username = window.Telegram.WebApp.initDataUnsafe?.user?.username || "Неизвестный пользователь";
 
+    // Получаем данные корзины из localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+        alert("Ваша корзина пуста.");
+        return;
+    }
+
+    // Генерируем случайный номер заказа
+    const orderNumber = Math.floor(Math.random() * 100000);
+
+    // Формируем текст сообщения для Telegram
     const messageText = `🛒 *Новый заказ:*\n` +
-        `👤 *Пользователь*: ${orderData.username}\n` +
-        `📦 *Заказ*: ${orderData.order.join(", ")}\n` +
-        `🔢 *Номер заказа*: ${orderData.orderNumber}`;
+        `👤 *Пользователь*: ${username}\n` +
+        `📦 *Заказ*: ${cart.join(", ")}\n` +
+        `🔢 *Номер заказа*: ${orderNumber}`;
 
     const telegramBotToken = "8005356500:AAFVIZCsVXz7xGxK2HgvsrZ0zIQkLz5vakQ";
     const chatId = "486886271"; // Замени на свой Telegram ID
