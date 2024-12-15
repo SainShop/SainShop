@@ -13,31 +13,26 @@
         .info {
             font-weight: bold;
             color: #2c3e50;
+            margin-top: 20px;
+            word-wrap: break-word;
+        }
+        .url {
+            color: #3498db;
         }
     </style>
 </head>
 <body>
 
     <h2>Mini App Test</h2>
-    <div id="user-info" class="info">Loading user ID...</div>
+    <div class="info">Полная ссылка:</div>
+    <div id="full-url" class="info url">Loading...</div>
 
     <script>
-        // Получаем параметр user_id из URL
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            const results = regex.exec(window.location.href);
-            return results === null ? null : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
+        // Получаем полный URL
+        const fullUrl = window.location.href;
 
-        // Находим и отображаем user_id
-        const userId = getUrlParameter('user_id');
-
-        if (userId) {
-            document.getElementById('user-info').innerText = `User ID: ${userId}`;
-        } else {
-            document.getElementById('user-info').innerText = 'User ID не найден.';
-        }
+        // Отображаем полный URL на странице
+        document.getElementById('full-url').innerText = fullUrl;
     </script>
 
 </body>
