@@ -31,16 +31,20 @@
         const hash = window.location.hash;
 
         if (hash) {
+            // Найти tgWebAppData в хэше
             const match = hash.match(/tgWebAppData=([^&]*)/);
             if (match) {
+                // Расшифровываем данные tgWebAppData
                 const decodedData = decodeURIComponent(match[1]);
-                const userMatch = decodedData.match(/user=([^&]*)/);
 
+                // Извлекаем значение параметра "user"
+                const userMatch = decodedData.match(/user=([^&]*)/);
                 if (userMatch) {
                     const userDataEncoded = decodeURIComponent(userMatch[1]);
                     const userData = JSON.parse(decodeURIComponent(userDataEncoded));
-                    username = userData.username || "Имя не найдено";
-                    console.log("Username:", username);
+
+                    // Сохраняем username
+                    const username = userData.username;
                 }
             }
         }
