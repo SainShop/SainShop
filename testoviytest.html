@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telegram Mini App</title>
+    <script>
+        window.onload = function () {
+            const tg = window.Telegram.WebApp;
+
+            // Telegram WebApp init
+            tg.ready();
+
+            // Получение initData
+            const initData = tg.initData;
+            const initDataUnsafe = tg.initDataUnsafe;
+
+            // Логируем переданные данные
+            console.log("initData (raw):", initData);
+            console.log("initDataUnsafe:", initDataUnsafe);
+
+            // Выводим username
+            const username = initDataUnsafe?.user?.username || "Анонимный пользователь";
+            document.body.innerHTML = `<h1>Привет, ${username}!</h1>`;
+        };
+    </script>
+</head>
+<body>
+    <h1>Загрузка...</h1>
+</body>
+</html>
