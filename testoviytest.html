@@ -3,34 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram WebApp Test</title>
-    <script>
-        function initTelegramApp() {
-            if (window.Telegram && window.Telegram.WebApp) {
-                const tg = window.Telegram.WebApp;
-
-                console.log("Telegram WebApp инициализирован!");
-
-                tg.ready();
-
-                const initData = tg.initData;
-                const initDataUnsafe = tg.initDataUnsafe;
-
-                console.log("initData:", initData);
-                console.log("initDataUnsafe:", initDataUnsafe);
-
-                const username = initDataUnsafe?.user?.username || "Неизвестный пользователь";
-                document.body.innerHTML = `<h1>Привет, ${username}</h1>`;
-            } else {
-                document.body.innerText = "Ошибка: Telegram WebApp не найден!";
-                console.error("Telegram WebApp не подключен.");
-            }
+    <title>Telegram Mini App Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
         }
-
-        window.onload = initTelegramApp;
-    </script>
+        .info {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
 </head>
 <body>
-    <p>Инициализация Telegram...</p>
+
+    <h2>Mini App Test</h2>
+    <div id="user-info" class="info">Loading user ID...</div>
+
+    <script>
+        // Получаем параметр user_id из URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(window.location.href);
+            return results === null ? null : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Находим и отображаем user_id
+        const userId = getUrlParameter('user_id');
+
+        if (userId) {
+            document.getElementById('user-info').innerText = `User ID: ${userId}`;
+        } else {
+            document.getElementById('user-info').innerText = 'User ID не найден.';
+        }
+    </script>
+
 </body>
 </html>
